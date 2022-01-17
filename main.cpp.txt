@@ -1,0 +1,25 @@
+#include "sculptor.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+    Sculptor projeto(100,100,100);
+    // Teste das funções
+    projeto.cutBox(0,99,0,99,0,99);      //Garantindo que o arquivo estará limpo
+    projeto.setColor(0.9999,0.5,0.5,1);  //Setando a cor da quadrado
+    projeto.putBox(8,16,8,16,8,16);      //Construindo o quadrado
+    projeto.cutBox(6,12,6,12,6,12);      //Cortando o quadrado
+    projeto.setColor(0.9999,0,0,0.9);    //Setando a cor da esfera
+    projeto.putSphere(30,30,30,21);      //Construindo a esfera
+    projeto.cutSphere(25,25,25,21);      //Cortando a esfera
+    projeto.setColor(0.2,0.8,0.5,0.1);   //Setando a cor da elipse
+    projeto.putEllipsoid(60,70,60,6,15,18); //Construindo a elipse
+    projeto.cutEllipsoid(70,75,70,10,23,30); //Cortando a elipse
+    projeto.writeOFF((char*)"Testedasfunções.off"); //Crindo o arquivo que será escrito o desenho no formato.off
+
+}
